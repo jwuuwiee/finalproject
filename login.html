@@ -19,7 +19,7 @@
 
   <main>
     <section class="login-form">
-      <form>
+      <form onsubmit="return loginRedirect(event)">
         <label for="username">Username</label>
         <input type="text" id="username" name="username" required/>
 
@@ -32,7 +32,16 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Maya's Portfolio</p>
+    <p>&copy; 2025 Ju's Portfolio</p>
   </footer>
+
+  <script>
+    function loginRedirect(event) {
+      event.preventDefault(); // Prevent the form from submitting traditionally
+      // You could add validation logic here if needed
+      window.location.href = "services.html"; // Redirect to Artworks page
+      return false;
+    }
+  </script>
 </body>
 </html>

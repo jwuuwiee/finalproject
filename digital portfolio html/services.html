@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Artworks</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <h1>My Artworks</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Artworks</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 style="text-align:center;color:#d63384;">Featured Artwork</h2>
+
+    <!-- Fully Rendered Art Section -->
+    <section>
+      <h3 style="text-align:center;color:#d63384;">💖Fully Rendered Art</h3>
+      <div class="gallery">
+        <div class="art zoomable"><img src="assets/rendered1.jpg" alt="Rendered 1"><p>[FANART] Genshin Impact - Mualani</p></div>
+        <div class="art zoomable"><img src="assets/rendered2.jpg" alt="Rendered 2"><p>Medyo Self-Portrait (in my style!)</p></div>
+        <div class="art zoomable"><img src="assets/rendered3.jpg" alt="Rendered 3"><p>[OC] Alesha - Night Ride</p></div>
+        <div class="art zoomable"><img src="assets/rendered5.jpg" alt="Rendered 4"><p>[OC] Venus & Zenith Alternative Universes</p></div>
+        <div class="art zoomable"><img src="assets/rendered6.jpg" alt="Rendered 5"><p>[OC] Sabrina & Alesha - Sunset Gaming</p></div>
+      </div>
+    </section>
+
+    <!-- Sketches Section -->
+    <section>
+      <h3 style="text-align:center;color:#d63384;">✏️Sketches</h3>
+      <div class="gallery">
+        <div class="art zoomable"><img src="assets/sketch1.jpg" alt="Sketch 1"><p>[OC] Venus & Zenith stranded moments</p></div>
+        <div class="art zoomable"><img src="assets/sketch2.jpg" alt="Sketch 2"><p>[RANDOM] Practice Sketches</p></div>
+        <div class="art zoomable"><img src="assets/sketch3.jpg" alt="Sketch 3"><p>[RANDOM] Practice Sketches</p></div>
+        <div class="art zoomable"><img src="assets/sketch4.jpg" alt="Sketch 4"><p>[OC] Xyra and Mercury - Kindergarten Teacher x School Nurse AU</p></div>
+        <div class="art zoomable"><img src="assets/sketch5.jpg" alt="Sketch 5"><p>[OC] Angel!Venus AU</p></div>
+      </div>
+    </section>
+
+    <!-- Work In Progress Section -->
+    <section>
+      <h3 style="text-align:center;color:#d63384;">🔧Work in Progress</h3>
+      <div class="gallery">
+        <div class="art zoomable"><img src="assets/wip1.jpg" alt="WIP 1"><p>[FANART] Kpop Demon Hunters - Zoey & Mystery</p></div>
+        <div class="art zoomable"><img src="assets/wip2.jpg" alt="WIP 2"><p>[OC] Sabrina & Alesha - My girlfriend and her sea animal plushies</p></div>
+        <div class="art zoomable"><img src="assets/wip3.jpg" alt="WIP 3"><p>[OC] (tbh di ko alam kung si Sab x Alesha or Venus x Zen ba to) Binondo Date</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Ju's Portfolio</p>
+  </footer>
+
+  <!-- Lightbox Container -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img id="lightbox-img" src="" alt="Zoomed Art">
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox .close');
+
+    document.querySelectorAll('.zoomable img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
